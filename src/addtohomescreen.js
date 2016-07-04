@@ -497,6 +497,7 @@ ath.Class.prototype = {
 		message = '<p>' + message.replace(/%icon(?:\[([^\]]+)\])?/gi, function(matches, group1) {
 			return '<span class="ath-action-icon">' + (!!group1 ? group1 : 'icon') + '</span>';
 		}); + '</p>';
+		fa_mobile = '<div class="oval"><i class="fa fa-mobile" aria-hidden="true"></i></div>'
 
 		// create the message container
 		this.viewport = document.createElement('div');
@@ -517,6 +518,7 @@ ath.Class.prototype = {
 		this.element.style.transform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
 
 		// add the application icon
+		this.element.innerHTML += fa_mobile;
 		this.element.innerHTML += message;
 
 		// we are not ready to show, place the message out of sight

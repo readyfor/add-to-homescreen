@@ -35,12 +35,12 @@
 	pointer-events: auto !important;
 	position: absolute;
 	z-index: 2147483641;
-	padding: 0.7em 0.6em;
-	width: 18em;
+	padding: 0.2em 1em;
+	margin: 0px 70px;
 	background: #eee;
 	background-size: 100% auto;
 	font-family: sans-serif;
-	font-size: px;
+	font-size: 12px;
 	line-height: 1.5em;
 	text-align: center;
 	border-radius: 8px;
@@ -165,9 +165,20 @@
 	background-size: 100% auto;
 }
 
+.ath-container .oval {
+	width: 28.6px;
+	height: 29.7px;
+	background-color: #ff5050;
+	border: solid 2px #fff5f5;
+	-webkit-border-radius: 100px;
+	position: absolute;
+	margin-left: -20px;
+	margin-top: -10px
+}
+
 .ath-container p {
 	margin: 0;
-	padding: 0;
+	padding: 0 20px;
 	position: relative;
 	z-index: 2147483642;
 	text-shadow: 0 0.1em 0 #fff;
