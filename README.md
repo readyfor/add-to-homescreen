@@ -1,7 +1,5 @@
 # Add to Homescreen call out
 
-This branch is readyfor.
-
 Script for mobile devices, it automatically shows an overlaying message encouraging to add the web app to the homescreen. Compatible with iOS 6+ and Chrome for Android (soon WinPhone).
 
 ## Installation
