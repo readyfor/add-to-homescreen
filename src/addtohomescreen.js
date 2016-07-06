@@ -497,6 +497,7 @@ ath.Class.prototype = {
 		message = '<p>' + message.replace(/%icon(?:\[([^\]]+)\])?/gi, function(matches, group1) {
 			return '<span class="ath-action-icon">' + (!!group1 ? group1 : 'icon') + '</span>';
 		}); + '</p>';
+		var fa_mobile = '<div class="oval"><i class="fa fa-mobile" aria-hidden="true"></i></div>';
 
 		// create the message container
 		this.viewport = document.createElement('div');
@@ -513,21 +514,22 @@ ath.Class.prototype = {
 		this.element = document.createElement('div');
 		this.element.className = 'ath-container ath-' + ath.OS + ' ath-' + ath.OS + (ath.OSVersion + '').substr(0,1) + ' ath-' + (ath.isTablet ? 'tablet' : 'phone');
 		this.element.style.cssText = '-webkit-transition-property:-webkit-transform,opacity;-webkit-transition-duration:0s;-webkit-transition-timing-function:ease-out;transition-property:transform,opacity;transition-duration:0s;transition-timing-function:ease-out;';
-		this.element.style.webkitTransform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
-		this.element.style.transform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
+		// this.element.style.webkitTransform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
+		// this.element.style.transform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
 
 		// add the application icon
-		if ( this.options.icon && this.applicationIcon ) {
-			this.element.className += ' ath-icon';
-			this.img = document.createElement('img');
-			this.img.className = 'ath-application-icon';
-			this.img.addEventListener('load', this, false);
-			this.img.addEventListener('error', this, false);
+		// if ( this.options.icon && this.applicationIcon ) {
+		// 	this.element.className += ' ath-icon';
+		// 	this.img = document.createElement('img');
+		// 	this.img.className = 'ath-application-icon';
+		// 	this.img.addEventListener('load', this, false);
+		// 	this.img.addEventListener('error', this, false);
+		//
+		// 	this.img.src = this.applicationIcon.href;
+		// 	this.element.appendChild(this.img);
+		// }
 
-			this.img.src = this.applicationIcon.href;
-			this.element.appendChild(this.img);
-		}
-
+		this.element.innerHTML += fa_mobile;
 		this.element.innerHTML += message;
 
 		// we are not ready to show, place the message out of sight
@@ -557,7 +559,7 @@ ath.Class.prototype = {
 
 		// reposition/resize the message on orientation change
 		window.addEventListener('resize', this, false);
-		window.addEventListener('scroll', this, false);
+		// window.addEventListener('scroll', this, false);
 		window.addEventListener('orientationchange', this, false);
 
 		if ( this.options.modal ) {
