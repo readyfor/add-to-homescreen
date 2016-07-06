@@ -84,8 +84,8 @@ ath.intl = {
 	},
 
 	ja_jp: {
-		ios: 'このボタンからREADYFORをホーム画面に追加できます',
-		android: 'ブラウザのメニューから<br><strong>ホーム画面に追加</strong>を押すと、READYFORをホーム画面に追加することが出来ます'
+		ios: 'このウェプアプリをホーム画面に追加するために%iconを押して<strong>ホーム画面に追加</strong>。',
+		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
  	},
 
 	ko_kr: {
@@ -152,6 +152,7 @@ for ( var lang in ath.intl ) {
 // default options
 ath.defaults = {
 	appID: 'org.cubiq.addtohome',		// local storage name (no need to change)
+	fontSize: 15,				// base font size, used to properly resize the popup based on viewport scale factor
 	debug: false,				// override browser checks
 	logging: false,				// log reasons for showing or not showing to js console; defaults to true when debug is true
 	modal: false,				// prevent further actions until the message is closed
@@ -159,8 +160,8 @@ ath.defaults = {
 	autostart: true,			// show the message automatically
 	skipFirstVisit: false,		// show only to returning visitors (ie: skip the first time you visit)
 	startDelay: 1,				// display the message after that many seconds from page load
-	lifespan: 0,				// life of the message in seconds
-	displayPace: 0,			// minutes before the message is shown again (0: display every time, default 24 hours)
+	lifespan: 15,				// life of the message in seconds
+	displayPace: 1440,			// minutes before the message is shown again (0: display every time, default 24 hours)
 	maxDisplayCount: 0,			// absolute maximum number of times the message will be shown to the user (0: no limit)
 	icon: true,					// add touch icon to the message
 	message: '',				// the message can be customized
@@ -496,7 +497,7 @@ ath.Class.prototype = {
 		message = '<p>' + message.replace(/%icon(?:\[([^\]]+)\])?/gi, function(matches, group1) {
 			return '<span class="ath-action-icon">' + (!!group1 ? group1 : 'icon') + '</span>';
 		}); + '</p>';
-		fa_mobile = '<div class="oval"><i class="fa fa-mobile" aria-hidden="true"></i></div>'
+		var fa_mobile = '<div class="oval"><i class="fa fa-mobile" aria-hidden="true"></i></div>';
 
 		// create the message container
 		this.viewport = document.createElement('div');
