@@ -44,6 +44,7 @@
 	line-height: 1.5em;
 	text-align: center;
 	border-radius: 8px;
+	bottom: 0;
 }
 
 .ath-container small {
@@ -179,7 +180,11 @@
 .ath-container .fa-mobile {
   width: 10.7px;
   height: 17.9px;
-  background-color: #ffffff;
+}
+
+.ath-container .fa-mobile ::before {
+	background-color: #ffffff;
+	font-size: 1.7em;
 }
 
 .ath-container p {
