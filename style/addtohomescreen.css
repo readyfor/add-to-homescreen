@@ -209,7 +209,7 @@
 	margin-left: -1em;
 	-webkit-transform: scaleX(0.9) rotate(45deg);
 	transform: scaleX(0.9) rotate(45deg);
-	box-shadow: 2px 2px 2px rgba(157, 157, 157, 0.5);
+	box-shadow: 1.5px 1.5px 1.5px rgba(157, 157, 157, 0.5);
 }
 
 .ath-ios.ath-tablet:after {
