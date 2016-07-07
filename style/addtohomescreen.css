@@ -45,6 +45,7 @@
 	text-align: center;
 	border-radius: 8px;
 	bottom: 90px;
+	box-shadow: 0 2px 4px 0 rgba(157, 157, 157, 0.5);
 }
 
 .ath-container small {
@@ -208,6 +209,7 @@
 	margin-left: -1em;
 	-webkit-transform: scaleX(0.9) rotate(45deg);
 	transform: scaleX(0.9) rotate(45deg);
+	box-shadow: 2px 2px 2px rgba(157, 157, 157, 0.5);
 }
 
 .ath-ios.ath-tablet:after {
