@@ -1,3 +1,9 @@
+# updates
+2019年4月 Readyforリポジトリから削除
+→もう使われていないが証跡のため残す。
+[経緯](https://github.com/readyfor/readyfor-issues/issues/75)
+
+
 # Add to Homescreen call out
 
 this repository is for readyfor.
